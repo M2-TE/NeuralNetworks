@@ -223,8 +223,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8c8770fdd781142987fad714563ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neuralNetwork:
-    layers: 
+  initSettings:
+    layers: 02000000040000000500000002000000
+    neuronConnectionChance: 0.12
+    weightMutationChance: 0
+    weightMaxMutationRange: 0
 --- !u!4 &1153129281
 Transform:
   m_ObjectHideFlags: 0

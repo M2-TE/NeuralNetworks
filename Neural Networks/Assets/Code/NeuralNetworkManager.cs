@@ -3,15 +3,12 @@ using UnityEngine;
 
 public class NeuralNetworkManager : MonoBehaviour
 {
-	private NeuralNetworkCompact neuralNetworkCompact;
+	[SerializeField] private NeuralNetworkInitSettings initSettings;
+	private NeuralNetwork neuralNetwork;
 
 	private void Start()
 	{
-		var layers = new int[]
-		{
-			2, 3, 4, 2
-		};
-		neuralNetworkCompact = new NeuralNetworkCompact(layers);
-		neuralNetworkCompact.Print();
+		neuralNetwork = new NeuralNetworkNodebased(initSettings);
+		Debug.Log(neuralNetwork);
 	}
 }
