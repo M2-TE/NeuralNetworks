@@ -1,80 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
-using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace NeuralNetworks
 {
-	public abstract class NeuralNetwork { }
-
-	[Serializable]
-	public struct NeuralNetworkInitSettings
-	{
-		public int[] layers;
-
-		[Range(0f, 1f)] public float neuronConnectionChance;
-		[Range(0f, 1f)] public float weightMutationChance;
-		public float weightMaxMutationRange;
-	}
-
-	public class NeuralNetworkCompact : NeuralNetwork
-	{
-		private readonly int[] layers;
-		private readonly float[][] neurons;
-		private readonly float[][][] weights;
-
-		public NeuralNetworkCompact(int[] layers)
-		{
-			this.layers = layers;
-			neurons = new float[layers.Length][];
-			weights = new float[layers.Length][][];
-
-			InitNeurons();
-			InitWeights();
-		}
-
-		private void InitNeurons()
-		{
-			for (int layerIndex = 0; layerIndex < layers.Length; layerIndex++)
-			{
-				neurons[layerIndex] = new float[layers[layerIndex]];
-				for (int neuronIndex = 0; neuronIndex < layers[layerIndex]; neuronIndex++)
-					neurons[layerIndex][neuronIndex] = 0f;
-			}
-		}
-
-		private void InitWeights()
-		{
-			for (int layerIndex = 1; layerIndex < layers.Length; layerIndex++)
-			{
-				weights[layerIndex] = new float[layers[layerIndex]][];
-				for (int neuronIndex = 0; neuronIndex < layers[layerIndex]; neuronIndex++)
-				{
-					weights[layerIndex][neuronIndex] = new float[layers[layerIndex - 1]];
-					for (int weightIndex = 0; weightIndex < layers[layerIndex - 1]; weightIndex++)
-						weights[layerIndex][neuronIndex][weightIndex] = 0f;
-				}
-			}
-		}
-
-		public void Print()
-		{
-			for (int layerIndex = 0; layerIndex < layers.Length; layerIndex++)
-			{
-				Debug.Log("LAYER: index: " + layerIndex + " value: " + layers[layerIndex]);
-				for (int neuronIndex = 0; neuronIndex < layers[layerIndex]; neuronIndex++)
-				{
-					Debug.Log("	NEURON: " + neuronIndex + " value: " + neurons[layerIndex][neuronIndex]);
-					if (layerIndex == 0) continue;
-					for (int weightIndex = 0; weightIndex < layers[layerIndex - 1]; weightIndex++)
-						Debug.Log("		WEIGHT: " + weightIndex + " value: " + weights[layerIndex][neuronIndex][weightIndex]);
-				}
-			}
-		}
-	}
-
-
 	public class NeuralNetworkNodebased : NeuralNetwork
 	{
 		private const float minWeight = -1f;

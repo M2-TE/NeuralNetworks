@@ -1,1 +1,1 @@
-https://msdn.microsoft.com/en-us/magazine/mt829710.aspx
+//https://msdn.microsoft.com/en-us/magazine/mt829710.aspx
