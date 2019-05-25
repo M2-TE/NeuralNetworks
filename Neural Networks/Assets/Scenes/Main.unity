@@ -203,84 +203,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &814693464
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2709912666443149691, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_Name
-      value: Agent
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149691, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2709912666443149685, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1705476404, guid: 3cc5709bf1f58fd4bb5b1494e43bc535, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 519420031}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3cc5709bf1f58fd4bb5b1494e43bc535, type: 3}
 --- !u!1 &1153129279
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,11 +234,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initSettings:
     layers: 010000000300000001000000
-    neuronConnectionChance: 0.12
-    weightMutationChance: 0.05
-    weightMaxMutationRange: 1
+    weightMutationChance: 0.01
+    weightMaxMutationRange: 0.01
   cam: {fileID: 519420031}
-  agentPrefab: {fileID: 1705476404, guid: 3cc5709bf1f58fd4bb5b1494e43bc535, type: 3}
+  agentPrefab: {fileID: 2709912666443149691, guid: 3cc5709bf1f58fd4bb5b1494e43bc535,
+    type: 3}
   xBounds: 5
   yBounds: 5
   agentCount: 50
